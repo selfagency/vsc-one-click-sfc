@@ -21,20 +21,21 @@ const generateComponentName = name => {
   return name
 }
 
-const generateVueComponent = (componentName, fullPath) => {
+const generateVueComponent = (componentName, folderPath) => {
+  const className = generateComponentName(componentName)
+  const fullPath = `${folderPath}/${className}.vue`
+
   if (fs.existsSync(fullPath)) {
     console.log(`${componentName} already exists. Please choose another name.`)
     return
   }
 
-  const className = generateComponentName(componentName)
+  const jsFile = path.resolve(fullPath)
   const componentTemplate = path.resolve(__dirname, './file_template/component.txt')
-  let jsFile = path.resolve(`${fullPath}.vue`)
-  let jsFileContent = fs.readFileSync(componentTemplate, { encoding: 'utf-8' })
+  const jsFileContent = fs.readFileSync(componentTemplate, { encoding: 'utf-8' })
 
   fs.writeFileSync(jsFile, jsFileContent.replace(/className/g, className))
-
-  vscode.window.showInformationMessage(`Created component ${className}.`)
+  vscode.window.showInformationMessage(`Created component ${className} at ${fullPath}.`)
 }
 
 const activate = context => {
@@ -52,14 +53,14 @@ const activate = context => {
       const folderPath =
         param && param.fsPath
           ? param.fsPath
-          : await vscode.showInputBox({
-              prompt: 'Folder in which to place your new component',
-              placeHolder: 'components'
-            })
+          : (
+              await vscode.window.showInputBox({
+                prompt: 'Folder in which to place your new component',
+                placeHolder: 'components'
+              })
+            ).replace(/\/$/, '')
 
-      const fullPath = `${folderPath}/${componentName}`
-
-      generateVueComponent(componentName, fullPath)
+      generateVueComponent(componentName, folderPath)
     } else {
       return
     }
