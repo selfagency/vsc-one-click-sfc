@@ -2,7 +2,7 @@
 
 Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
-![Version](https://img.shields.io/badge/version-0.1.7-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.1.9-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: self_agency](https://img.shields.io/twitter/follow/self_agency.svg?style=social)](https://twitter.com/self_agency)
