@@ -2,7 +2,7 @@
 
 Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
-![Version](https://img.shields.io/badge/version-0.1.11-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.1.12-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: self_agency](https://img.shields.io/twitter/follow/self_agency.svg?style=social)](https://twitter.com/self_agency)
@@ -52,7 +52,7 @@ code --install-extension selfagency.vue-component-template
 
 ## Usage
 
-Right-click on a folder in the File Explorer pane and select or press `⇧⌘P` and enter `Create Vue Component`.
+Right-click on a folder in the File Explorer pane and select, or press `⇧⌘P` and type, `Create Vue Component`.
 
 You can specify a default style language (CSS, SASS, Less, Stylus, etc.) in `settings.json`:
 

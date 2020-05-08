@@ -8,7 +8,7 @@ const generateVueComponent = (componentName, folderPath, styleLang) => {
   const fullPath = `${folderPath}/${componentName}.vue`
 
   if (fs.existsSync(fullPath)) {
-    console.log(`${componentName} already exists. Please choose another name.`)
+    console.info(`${componentName} already exists. Please choose another name.`)
     return false
   }
 

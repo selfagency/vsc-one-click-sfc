@@ -5,7 +5,6 @@ const getFolder = require('./getFolder.js')
 const generateComponent = require('./generateComponent.js')
 
 const config = vscode.workspace.getConfiguration('vue-component-template')
-console.log(config.defaultStyleLang)
 
 const activate = ctx => {
   console.log('Extension "vue-component-template" is now active!')

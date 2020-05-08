@@ -9,7 +9,7 @@ const getFolder = async param => {
         (
           await vscode.window.showInputBox({
             prompt: 'Folder in which to place your new component',
-            placeHolder: 'components'
+            placeHolder: 'src/components'
           })
         )
           .replace(/\/$/, '')
