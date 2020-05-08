@@ -30,11 +30,11 @@ const generateVueComponent = (componentName, folderPath) => {
     return
   }
 
-  const jsFile = path.resolve(fullPath)
+  const vueFile = path.resolve(fullPath)
   const componentTemplate = path.resolve(__dirname, './file_template/component.txt')
-  const jsFileContent = fs.readFileSync(componentTemplate, { encoding: 'utf-8' })
+  const vueFileContent = fs.readFileSync(componentTemplate, { encoding: 'utf-8' })
 
-  fs.writeFileSync(jsFile, jsFileContent.replace(/className/g, className))
+  fs.writeFileSync(vueFile, vueFileContent.replace(/className/g, className))
   vscode.window.showInformationMessage(`Created component ${className} at ${fullPath}.`)
 }
 
@@ -53,7 +53,8 @@ const activate = context => {
       const folderPath =
         param && param.fsPath
           ? param.fsPath
-          : (
+          : (vscode.workspace.workspaceFolders.length ? `${vscode.workspace.workspaceFolders[0]}/` : '') +
+            (
               await vscode.window.showInputBox({
                 prompt: 'Folder in which to place your new component',
                 placeHolder: 'components'
