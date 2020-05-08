@@ -1,7 +1,7 @@
 {
   "name": "vue-component-template",
   "displayName": "Click-to-Add Vue Component Template",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Adds \"Create Vue Component\" to VS Code File Explorer right-click menu",
   "repository": "https://gitlab.com/selfagency/vscode-vue-component-template.git",
   "author": "Daniel Sieradski <daniel@self.agency>",
@@ -54,5 +54,8 @@
     "eslint-plugin-standard": "^4.0.1",
     "typescript": "^3.4.5",
     "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "rword": "^3.1.1"
   }
 }

@@ -2,7 +2,7 @@
 
 Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
-![Version](https://img.shields.io/badge/version-0.1.10-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.1.11-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: self_agency](https://img.shields.io/twitter/follow/self_agency.svg?style=social)](https://twitter.com/self_agency)
@@ -11,6 +11,15 @@ Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
 Creates a blank Vue single file component in the folder of your choosing.
 
+- Capitalizes component names and converts camel_case to PascalCase.
+- Checks if the component name you've chosen is a known HTML tag and, if so, prepends it with `Custom`.
+- Generates a random component name if you don't feel like coming up with one.
+- Inserts component name into template.
+- Checks if the file already exists so there are no accidental overwrites.
+- Allows you to specify a default style language in `settings.json`.
+
+### Template
+
 ```vue
 <template>
   <div></div>
@@ -18,14 +27,19 @@ Creates a blank Vue single file component in the folder of your choosing.
 
 <script>
 export default {
-  name: 'ComponentName',
+  name: '[componentName]',
+  components: {},
+  props: {},
   data() {
     return {}
-  }
+  },
+  mounted() {},
+  beforeDestroy() {},
+  methods: {}
 }
 </script>
 
-<style lang="" scoped></style>
+<style lang="[styleLang]" scoped></style>
 ```
 
 ## Install
@@ -39,6 +53,14 @@ code --install-extension selfagency.vue-component-template
 ## Usage
 
 Right-click on a folder in the File Explorer pane and select or press `⇧⌘P` and enter `Create Vue Component`.
+
+You can specify a default style language (CSS, SASS, Less, Stylus, etc.) in `settings.json`:
+
+```
+{
+  "vue-component-template.defaultStyleLang": "scss"
+}
+```
 
 ## Author
 
