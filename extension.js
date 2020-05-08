@@ -5,7 +5,7 @@ const exec = require('child_process').exec
 
 const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1)
 
-function generateComponentName(dirName) {
+const generateComponentName = dirName => {
   let className = ''
 
   if (!dirName) throw new Error('Directory name cannot be null.')
@@ -18,7 +18,7 @@ function generateComponentName(dirName) {
   return className
 }
 
-function generateVueComponent(componentName, fullPath) {
+const generateVueComponent = (componentName, fullPath) => {
   if (fs.existsSync(fullPath)) {
     console.log(`${componentName} already exists. Please choose another name.`)
     return
@@ -38,10 +38,10 @@ function generateVueComponent(componentName, fullPath) {
   vscode.window.showInformationMessage('Component created.')
 }
 
-function activate(context) {
+const activate = context => {
   console.log('"vue-component-template" is now active!')
 
-  const fc = vscode.commands.registerCommand('extension.createcomponent', function(param) {
+  const fc = vscode.commands.registerCommand('extension.createVueComponent', param => {
     const folderPath = param.fsPath
 
     const options = {
