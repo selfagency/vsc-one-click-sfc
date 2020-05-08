@@ -5,6 +5,7 @@
   "description": "Adds \"Create Vue Component\" to VS Code File Explorer right-click menu",
   "repository": "https://gitlab.com/selfagency/vscode-vue-component-template.git",
   "author": "Daniel Sieradski <daniel@self.agency>",
+  "publisher": "selfagency",
   "license": "MIT",
   "private": false,
   "categories": [
@@ -13,7 +14,9 @@
   ],
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
+    "test": "node ./node_modules/vscode/bin/test",
+    "build": "vsce package",
+    "publish": "vsce publish"
   },
   "engines": {
     "vscode": "^1.0.0"
