@@ -53,7 +53,9 @@ const activate = context => {
       const folderPath =
         param && param.fsPath
           ? param.fsPath
-          : (vscode.workspace.workspaceFolders.length ? `${vscode.workspace.workspaceFolders[0]}/` : '') +
+          : (vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length
+              ? `${vscode.workspace.workspaceFolders[0]}/`
+              : '') +
             (
               await vscode.window.showInputBox({
                 prompt: 'Folder in which to place your new component',
