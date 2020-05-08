@@ -1,21 +1,24 @@
 const vscode = require('vscode')
 const fs = require('fs')
 const path = require('path')
-const exec = require('child_process').exec
 
-const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1)
+const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
-const generateComponentName = dirName => {
-  let className = ''
-
-  if (!dirName) throw new Error('Directory name cannot be null.')
-  const nameArr = dirName.split('_')
-
-  for (const name of nameArr) {
-    className += capitalizeFirstLetter(name)
+const generateComponentName = name => {
+  if (!name) {
+    console.error('Name cannot be blank.')
+    return
   }
 
-  return className
+  if (/\_/g.test(name)) {
+    name = name.split('_')
+    name = name.forEach(n => capitalize(n))
+    name = name.join('')
+  } else {
+    name = capitalize(name)
+  }
+
+  return name
 }
 
 const generateVueComponent = (componentName, fullPath) => {
@@ -29,34 +32,37 @@ const generateVueComponent = (componentName, fullPath) => {
   let jsFile = path.resolve(`${fullPath}.vue`)
   let jsFileContent = fs.readFileSync(componentTemplate, { encoding: 'utf-8' })
 
-  fs.writeFileSync(jsFile, jsFileContent.replace(/ClassName/g, className))
+  fs.writeFileSync(jsFile, jsFileContent.replace(/className/g, className))
 
-  exec(`cd ${fullPath} && git add .`, err =>
-    err ? console.error('Command failed:', 'git add .') : console.log('command success:', 'git add .')
-  )
-
-  vscode.window.showInformationMessage('Component created.')
+  vscode.window.showInformationMessage(`Created component ${className}.`)
 }
 
 const activate = context => {
-  console.log('"vue-component-template" is now active!')
+  console.log('Extension "vue-component-template" is now active!')
 
-  const fc = vscode.commands.registerCommand('extension.createVueComponent', param => {
-    const folderPath = param.fsPath
+  const fc = vscode.commands.registerCommand('extension.createVueComponent', async param => {
+    const componentName = (
+      await vscode.window.showInputBox({
+        prompt: 'Enter a name for your new component',
+        placeHolder: 'ComponentName'
+      })
+    ).replace('.vue', '')
 
-    const options = {
-      prompt: 'Component name: ',
-      placeHolder: 'Enter a name for your component (without a file extension)'
-    }
+    if (componentName) {
+      const folderPath =
+        param && param.fsPath
+          ? param.fsPath
+          : await vscode.showInputBox({
+              prompt: 'Folder in which to place your new component',
+              placeHolder: 'components'
+            })
 
-    vscode.window.showInputBox(options).then(value => {
-      if (!value) return
-
-      const componentName = value
       const fullPath = `${folderPath}/${componentName}`
 
       generateVueComponent(componentName, fullPath)
-    })
+    } else {
+      return
+    }
   })
 
   context.subscriptions.push(fc)
