@@ -2,7 +2,7 @@
 
 Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
-![Version](https://img.shields.io/badge/version-0.1.12-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.1.13-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: self_agency](https://img.shields.io/twitter/follow/self_agency.svg?style=social)](https://twitter.com/self_agency)
@@ -11,7 +11,7 @@ Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
 Creates a blank Vue single file component in the folder of your choosing.
 
-- Capitalizes component names and converts camel_case to PascalCase.
+- Capitalizes component names and converts snake_case to PascalCase.
 - Checks if the component name you've chosen is a known HTML tag and, if so, prepends it with `Custom`.
 - Generates a random component name if you don't feel like coming up with one.
 - Inserts component name into template.
@@ -67,7 +67,7 @@ You can specify a default style language (CSS, SASS, Less, Stylus, etc.) in `set
 👤 **Daniel Sieradski <daniel@self.agency>**
 
 - Website: https://self.agency
-- Twitter: [@self_agency](https://twitter.com/selfagency_llc)
+- Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
 - GitLab: [@selfagency](https://gitlab.com/selfagency)
 - LinkedIn: [@selfagency](https://linkedin.com/in/selfagency)
 
