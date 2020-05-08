@@ -1,13 +1,13 @@
-# Welcome to vscode-vue-component-template 👋
+# vscode-vue-component-template
 
 Adds &#34;Create Vue Component&#34; to VS Code File Explorer right-click menu
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vscode-vue-component-template)
+![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000)
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: self_agency](https://img.shields.io/twitter/follow/self_agency.svg?style=social)](https://twitter.com/self_agency)
 
-### 🏠 [Homepage](https://marketplace.visualstudio.com/items?itemName=selfagency.vscode-vue-component-template)
+### 🏠 [Homepage](https://marketplace.visualstudio.com/items?itemName=selfagency.vue-component-template)
 
 Creates a blank Vue single file component in the folder of your choosing.
 
