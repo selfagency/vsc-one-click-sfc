@@ -1,7 +1,7 @@
 {
   "name": "vue-component-template",
   "displayName": "Click-to-Add Vue Component Template",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Adds \"Create Vue Component\" to VS Code File Explorer right-click menu",
   "repository": "https://gitlab.com/selfagency/vscode-vue-component-template.git",
   "author": "Daniel Sieradski <daniel@self.agency>",
@@ -33,6 +33,23 @@
         "title": "Create Single-File Vue Component"
       }
     ],
+    "configuration": {
+      "title": "Click-to-Add Vue Component Template",
+      "type": "string",
+      "properties": {
+        "vue-component-template.defaultStyleLang": {
+          "default": "css",
+          "enum": [
+            "css",
+            "sass",
+            "scss",
+            "less",
+            "stylus"
+          ],
+          "description": "Specify a default style language for component templates"
+        }
+      }
+    },
     "menus": {
       "explorer/context": [
         {

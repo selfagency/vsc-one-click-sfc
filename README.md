@@ -16,7 +16,7 @@ Creates a blank Vue single file component in the folder of your choosing.
 - Generates a random component name if you don't feel like coming up with one.
 - Inserts component name into template.
 - Checks if the file already exists so there are no accidental overwrites.
-- Allows you to specify a default style language in `settings.json`.
+- Allows you to specify a default style language.
 
 ### Template
 
@@ -54,7 +54,7 @@ code --install-extension selfagency.vue-component-template
 
 Right-click on a folder in the File Explorer pane and select, or press `⇧⌘P`/`⇧^P` and type, `Create Vue Component`.
 
-You can specify a default style language (CSS, SASS, Less, Stylus, etc.) in `settings.json`:
+You can specify a default style language (CSS, SASS, Less, Stylus, etc.) via the Settings UI or directly in `settings.json`:
 
 ```
 {
@@ -66,7 +66,7 @@ You can specify a default style language (CSS, SASS, Less, Stylus, etc.) in `set
 
 👤 **Daniel Sieradski <daniel@self.agency>**
 
-- Website: https://self.agency
+- Website: <https://self.agency>
 - Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
 - GitLab: [@selfagency](https://gitlab.com/selfagency)
 - LinkedIn: [@selfagency](https://linkedin.com/in/selfagency)
